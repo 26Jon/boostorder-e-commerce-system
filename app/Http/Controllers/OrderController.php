@@ -8,20 +8,6 @@ use App\Models\Orders;
 class OrderController extends Controller
 {
     //GET api/order/user/{userId}
-    // public function getOrdersByUserId($userId){
-    //     try{
-    //         $orders = Orders::where("user_id", $userId)->with('orderItems.product')->get();
-
-    //         if (!$orders) {
-    //             return response()->json(['message' => 'Order not found for this user'], 404);
-    //         }
-
-    //         return response()->json($orders);
-    //     }
-    //     catch(\Exception $e){
-    //         return response()->json(['error' => 'Could not retrieve orders'], 500);
-    //     }
-    // }
     public function getOrdersByUserId($userId){
         try {
             $orders = Orders::where("user_id", $userId)->with('orderItems.product')->get();
